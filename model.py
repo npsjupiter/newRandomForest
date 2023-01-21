@@ -59,7 +59,7 @@ single_sample = np.array(feature_list).reshape(1,-1)
     
 if st.button("Predict"):
  
-        loaded_model = jbl.load("rf.joblib")
+        loaded_model = pickle.load(open('model.pkl', 'rb'))
         prediction = loaded_model.predict(single_sample)
         if prediction[0] == 0 :
             st.success(
